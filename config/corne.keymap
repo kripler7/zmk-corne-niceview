@@ -81,15 +81,25 @@
         default_layer {
             label = "0";
             bindings = <
-&none  &kp Q  &kp W  &kp E      &kp R        &kp T          &kp Y        &kp U           &kp I                     &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D      &kp F        &kp G          &kp H        &kp J           &kp K                     &kp L    &kp SEMI  &none
-&none  &kp Z  &kp X  &kp C      &kp V        &kp B          &kp N        &kp M           &kp COMMA                 &kp DOT  &kp FSLH  &none
-                     &lt 1 SQT  &lt 3 SPACE  &lt 1 SPACE    &lt 2 SPACE  &kp LEFT_SHIFT  &mt LA(SQT) SINGLE_QUOTE
+&none  &kp Q  &kp W  &kp E      &kp R      &kp T          &kp Y        &kp U          &kp I                     &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D      &kp F      &kp G          &kp H        &kp J          &kp K                     &kp L    &kp SEMI  &none
+&none  &kp Z  &kp X  &kp C      &kp V      &kp B          &kp N        &kp M          &kp COMMA                 &kp DOT  &kp FSLH  &none
+                     &lt 1 SQT  &lt 5 TAB  &lt 1 SPACE    &lt 2 SPACE  &kp BACKSPACE  &mt LA(SQT) SINGLE_QUOTE
             >;
         };
 
         arrow_numbers {
-            label = "3";
+            label = "1";
+            bindings = <
+&none  &mt EXCLAMATION KP_NUMBER_1  &mt AT_SIGN KP_NUMBER_2        &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT KP_NUMBER_5    &mt CARET KP_NUMBER_6  &mt AMPERSAND KP_NUMBER_7  &mt ASTERISK KP_NUMBER_8  &mt LEFT_PARENTHESIS KP_NUMBER_9  &mt LEFT_PARENTHESIS KP_NUMBER_0  &none
+&none  &mt UNDERSCORE MINUS         &mt PLUS EQUAL                 &none              &none                &none                      &none                  &kp PAGE_UP                &kp UP_ARROW              &kp PAGE_DOWN                     &mt DOUBLE_QUOTES SQT             &none
+&none  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &none              &none                &none                      &kp HOME               &kp LEFT_ARROW             &kp DOWN                  &kp RIGHT_ARROW                   &kp END                           &none
+                                                                   &none              &none                &none                      &none                  &none                      &none
+            >;
+        };
+
+        arrow_numbers2 {
+            label = "2";
             bindings = <
 &none  &mt EXCLAMATION KP_NUMBER_1  &mt AT_SIGN KP_NUMBER_2        &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT KP_NUMBER_5    &mt CARET KP_NUMBER_6  &mt AMPERSAND KP_NUMBER_7  &mt ASTERISK KP_NUMBER_8  &mt LEFT_PARENTHESIS KP_NUMBER_9  &mt LEFT_PARENTHESIS KP_NUMBER_0  &none
 &none  &mt UNDERSCORE MINUS         &mt PLUS EQUAL                 &none              &none                &none                      &none                  &kp PAGE_UP                &kp UP_ARROW              &kp PAGE_DOWN                     &mt DOUBLE_QUOTES SQT             &none
@@ -99,7 +109,7 @@
         };
 
         number_layer {
-            label = "1";
+            label = "3";
             bindings = <
 &none  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &none
 &none  &none   &none   &none   &none   &none     &none   &none   &none   &none   &none   &none
@@ -109,12 +119,21 @@
         };
 
         bt_layer {
-            label = "2";
+            label = "4";
             bindings = <
 &kp ESC       &kp LS(N1)    &kp LS(N2)      &kp LS(N3)    &kp LS(N4)    &kp LS(N5)     &kp LS(N6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &none
 &none         &none         &kp LEFT_ARROW  &kp DEL       &kp RIGHT     &bt BT_CLR     &none       &none       &none       &none       &none       &none
 &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2    &bt BT_SEL 1  &bt BT_SEL 0  &bootloader    &none       &none       &none       &none       &none       &none
                                             &none         &none         &none          &none       &none       &none
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
