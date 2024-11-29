@@ -37,7 +37,7 @@
             bindings = <&kp>, <&kp>;
 
             hold-trigger-on-release;
-            hold-trigger-key-positions = <14 15 21>;
+            hold-trigger-key-positions = <14 15 13>;
         };
 
         // Right-hand home row mods
@@ -52,7 +52,7 @@
             bindings = <&kp>, <&kp>;
 
             hold-trigger-on-release;
-            hold-trigger-key-positions = <20 16 19>;
+            hold-trigger-key-positions = <20 19 21>;
         };
 
         mmv {
