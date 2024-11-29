@@ -35,7 +35,6 @@
 
         hml: homerow_mod_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "Homerow Mod Left";
             flavor = "tap-preferred";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
@@ -50,8 +49,7 @@
 
         hmr: homerow_mod_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "Homerow Mod Right";
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
