@@ -25,7 +25,8 @@
 
 / {
     behaviors {
-      // Left-hand home row mods
+        // Left-hand home row mods
+
         hml: homerow_mod_left {
             compatible = "zmk,behavior-hold-tap";
             label = "Homerow Mod Left";
@@ -34,10 +35,13 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
+
             hold-trigger-on-release;
             hold-trigger-key-positions = <14 15 21>;
         };
- // Right-hand home row mods
+
+        // Right-hand home row mods
+
         hmr: homerow_mod_right {
             compatible = "zmk,behavior-hold-tap";
             label = "Homerow Mod Right";
@@ -46,9 +50,11 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
+
             hold-trigger-on-release;
             hold-trigger-key-positions = <20 16 19>;
- };
+        };
+
         mmv {
             compatible = "zmk,behavior-mouse-move";  // Added compatible property
             acceleration-exponent = <1>;            // 1
@@ -150,10 +156,10 @@
         default_layer {
             label = "0";
             bindings = <
-&none  &kp Q           &kp W             &kp E          &kp R           &kp T          &kp Y        &kp U            &kp I            &kp O              &kp P                &none
-&none  &kp A           &hm LEFT_SHIFT S  &hm LCTRL D    &hm LEFT_ALT F  &kp G          &kp H        &hm RIGHT_ALT J  &hm RCTRL K      &hm RIGHT_SHIFT L  &mt COLON SEMICOLON  &none
-&none  &hm LEFT_GUI Z  &kp X             &kp C          &kp V           &kp B          &kp N        &kp M            &kp COMMA        &kp DOT            &mt QUESTION SLASH   &none
-                                         &lt 3 LG(TAB)  &lt 4 TAB       &lt 1 SPACE    &lt 2 SPACE  &kp BACKSPACE    &mt LC(V) LC(C)
+&none  &kp Q            &kp W              &kp E          &kp R            &kp T          &kp Y        &kp U             &kp I            &kp O               &kp P                &none
+&none  &kp A            &hml LEFT_SHIFT S  &hml LCTRL D   &hml LEFT_ALT F  &kp G          &kp H        &hmr RIGHT_ALT J  &hmr RCTRL L     &hmr RIGHT_SHIFT L  &mt COLON SEMICOLON  &none
+&none  &hml LEFT_GUI Z  &kp X              &kp C          &kp V            &kp B          &kp N        &kp M             &kp COMMA        &kp DOT             &mt QUESTION SLASH   &none
+                                           &lt 3 LG(TAB)  &lt 4 TAB        &lt 1 SPACE    &lt 2 SPACE  &kp BACKSPACE     &mt LC(V) LC(C)
             >;
         };
 
@@ -214,6 +220,15 @@
 &none  &none           &none         &none         &none         &none           &none  &none  &none  &none  &none        &none
 &none  &bt BT_CLR_ALL  &bt BT_CLR    &none         &bt BT_PRV    &bt BT_NXT      &none  &none  &none  &none  &bootloader  &none
                                      &none         &none         &none           &none  &none  &none
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
