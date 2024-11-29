@@ -48,7 +48,7 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <20 16 19>;
-
+ };
         mmv {
             compatible = "zmk,behavior-mouse-move";  // Added compatible property
             acceleration-exponent = <1>;            // 1
