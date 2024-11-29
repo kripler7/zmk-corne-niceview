@@ -83,6 +83,26 @@
             bindings = <&screenshot>;
             key-positions = <25 26 27>;
         };
+
+        num_layer {
+            bindings = <&tog 3>;
+            key-positions = <6 7 8>;
+        };
+
+        bt_layer {
+            bindings = <&tog 6>;
+            key-positions = <5 4 3>;
+        };
+
+        default_layer {
+            bindings = <&tog 0>;
+            key-positions = <18 19 20 21>;
+        };
+
+        f_layer {
+            bindings = <&tog 5>;
+            key-positions = <17 16 15 14>;
+        };
     };
 
     macros {
