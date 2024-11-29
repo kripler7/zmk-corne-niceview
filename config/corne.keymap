@@ -61,19 +61,17 @@
             hold-trigger-key-positions = <20 19 21>;
         };
 
-     mmv_custom: mmv_custom {
-    compatible = "zmk,behavior-mouse-move";
-    acceleration-exponent = <1>;
-    time-to-max-speed-ms = <900>;
-    delay-ms = <0>;
-};
+   mmv {
+            acceleration-exponent = <1>;      // 1
+            time-to-max-speed-ms = <900>;    // 40
+            delay-ms = <0>;                   // 0
+        };
 
-       msc_custom: msc_custom {
-    compatible = "zmk,behavior-mouse-scroll";
-    acceleration-exponent = <1>;
-    time-to-max-speed-ms = <400>;
-    delay-ms = <0>;
-};
+        msc {
+            acceleration-exponent = <1>;      // 0
+            time-to-max-speed-ms = <400>;      // 500
+            delay-ms = <0>;                   //   10
+        };
 
     };
 
