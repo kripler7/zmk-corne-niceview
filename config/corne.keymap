@@ -16,8 +16,6 @@
 #define U_MS_D &mmv MOVE_DOWN
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  //  600
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
 &mt {
     tapping-term-ms = <350>;
@@ -27,18 +25,29 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
+      // Left-hand home row mods
+        hml: homerow_mod_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
+            label = "Homerow Mod Left";
+            flavor = "tap-preferred";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-
             require-prior-idle-ms = <150>;
-            hold-trigger-key-positions = <14 15 21 20 16 19>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <14 15 21>;
         };
+ // Right-hand home row mods
+        hmr: homerow_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Homerow Mod Right";
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <20 16 19>;
 
         mmv {
             compatible = "zmk,behavior-mouse-move";  // Added compatible property
@@ -48,6 +57,7 @@
         };
 
         msc {
+            compatible = "zmk,behavior-mouse-scroll";
             acceleration-exponent = <1>;      // 0
             time-to-max-speed-ms = <400>;      // 500
             delay-ms = <0>;                   //   10
