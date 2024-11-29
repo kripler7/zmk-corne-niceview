@@ -132,7 +132,7 @@
         };
 
         default_layer {
-            bindings = <&tog 0>;
+            bindings = <&to 0>;
             key-positions = <18 19 20 21>;
         };
 
