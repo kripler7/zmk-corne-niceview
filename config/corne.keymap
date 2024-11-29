@@ -18,10 +18,10 @@
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 #endif
 
-#define U_MS_U &mmv MOVE_UP
-#define U_MS_D &mmv MOVE_DOWN
-#define U_MS_L &mmv MOVE_LEFT
-#define U_MS_R &mmv MOVE_RIGHT
+#define U_MS_U &mmv_custom MOVE_UP
+#define U_MS_D &mmv_custom MOVE_DOWN
+#define U_MS_L &mmv_custom MOVE_LEFT
+#define U_MS_R &mmv_custom MOVE_RIGHT
 
 &mt {
     tapping-term-ms = <350>;
@@ -61,12 +61,12 @@
             hold-trigger-key-positions = <20 19 21>;
         };
 
-        mmv: mmv {
-            compatible = "zmk,behavior-mouse-move";  // Added compatible property
-            acceleration-exponent = <1>;            // 1
-            time-to-max-speed-ms = <900>;          // 40
-            delay-ms = <0>;                        // 0
-        };
+     mmv_custom: mmv_custom {
+    compatible = "zmk,behavior-mouse-move";
+    acceleration-exponent = <1>;
+    time-to-max-speed-ms = <900>;
+    delay-ms = <0>;
+};
 
         msc: msc {
             compatible = "zmk,behavior-mouse-scroll";
@@ -203,8 +203,8 @@
             label = "4";
             bindings = <
 &none  &none  &none  &none  &none  &none    &none           &kp K_BACK      &mkp MCLK       &kp K_FORWARD    &none            &none
-&none  &none  &none  &none  &none  &none    &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_DOWN   &none
-&none  &none  &none  &none  &none  &none    &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  &none
+&none  &none  &none  &none  &none  &none    &msc SCRL_UP    &mkp LCLK       &mmv_custom MOVE_UP    &mkp RCLK        &msc SCRL_DOWN   &none
+&none  &none  &none  &none  &none  &none    &msc SCRL_LEFT  &mmv_custom MOVE_LEFT  &mmv_custom MOVE_DOWN  &mmv_custom MOVE_RIGHT  &msc SCRL_RIGHT  &none
                      &none  &none  &none    &kp C_VOL_DN    &kp C_VOL_UP    &kp K_MUTE
             >;
         };
