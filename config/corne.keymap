@@ -55,14 +55,14 @@
             hold-trigger-key-positions = <20 19 21>;
         };
 
-        mmv {
+        mmv: mmv {
             compatible = "zmk,behavior-mouse-move";  // Added compatible property
             acceleration-exponent = <1>;            // 1
             time-to-max-speed-ms = <900>;          // 40
             delay-ms = <0>;                        // 0
         };
 
-        msc {
+        msc: msc {
             compatible = "zmk,behavior-mouse-scroll";
             acceleration-exponent = <1>;      // 0
             time-to-max-speed-ms = <400>;      // 500
@@ -220,15 +220,6 @@
 &none  &none           &none         &none         &none         &none           &none  &none  &none  &none  &none        &none
 &none  &bt BT_CLR_ALL  &bt BT_CLR    &none         &bt BT_PRV    &bt BT_NXT      &none  &none  &none  &none  &bootloader  &none
                                      &none         &none         &none           &none  &none  &none
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
