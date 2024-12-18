@@ -29,7 +29,7 @@
 
 &mt {
     tapping-term-ms = <350>;
-    flavor = "tap-preferred";
+    flavor = "balanced";
     hold-trigger-on-release;
 };
 
@@ -40,7 +40,7 @@
         hml: homerow_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
@@ -55,7 +55,7 @@
         hmr: homerow_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
