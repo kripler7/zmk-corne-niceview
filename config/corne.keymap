@@ -10,34 +10,71 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#define DEFAULT_L 0
-#define SYMBOLS_L 1
-#define ARROWS_L  2
-#define NUMBERS_L 3
+#ifndef ZMK_MOUSE_DEFAULT_MOVE_VAL
+
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1600  // 600
+
+#endif
+
+#ifndef ZMK_MOUSE_DEFAULT_SCRL_VAL
+
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 25    // 10
+
+#endif
+
+#define U_MS_U &mmv MOVE_UP
+#define U_MS_D &mmv MOVE_DOWN
+#define U_MS_L &mmv MOVE_LEFT
+#define U_MS_R &mmv MOVE_RIGHT
 
 &mt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <350>;
     flavor = "tap-preferred";
     hold-trigger-on-release;
 };
 
 / {
     behaviors {
-        hm: homerow_mods {
+        // Left-hand home row mods
+
+        hml: homerow_mod_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
-            quick-tap-ms = <75>;
             flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <14 15 13>;
+        };
+
+        // Right-hand home row mods
+
+        hmr: homerow_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <20 19 21>;
         };
 
         mmv {
-            compatible = "zmk,behavior-mouse-move";  // Added compatible property
-            acceleration-exponent = <1>;            // 1
-            time-to-max-speed-ms = <900>;          // 40
-            delay-ms = <0>;                        // 0
+            acceleration-exponent = <1>;      // 1
+            time-to-max-speed-ms = <900>;    // 40
+            delay-ms = <0>;                   // 0
+        };
+
+        msc {
+            acceleration-exponent = <1>;      // 0
+            time-to-max-speed-ms = <400>;      // 500
+            delay-ms = <0>;                   //   10
         };
     };
 
@@ -61,7 +98,7 @@
 
         e {
             bindings = <&kp ENTER>;
-            key-positions = <22 21>;
+            key-positions = <21 20>;
         };
 
         h {
@@ -95,13 +132,18 @@
         };
 
         default_layer {
-            bindings = <&tog 0>;
+            bindings = <&to 0>;
             key-positions = <18 19 20 21>;
         };
 
         f_layer {
             bindings = <&tog 5>;
             key-positions = <17 16 15 14>;
+        };
+
+        num_backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <8 9>;
         };
     };
 
@@ -127,10 +169,10 @@
         default_layer {
             label = "0";
             bindings = <
-&none  &kp Q           &kp W             &kp E          &kp R           &kp T          &kp Y        &kp U            &kp I            &kp O              &kp P                &none
-&none  &kp A           &hm LEFT_SHIFT S  &hm LCTRL D    &hm LEFT_ALT F  &kp G          &kp H        &hm RIGHT_ALT J  &hm RCTRL K      &hm RIGHT_SHIFT L  &mt COLON SEMICOLON  &none
-&none  &hm LEFT_GUI Z  &kp X             &kp C          &kp V           &kp B          &kp N        &kp M            &kp COMMA        &kp DOT            &mt QUESTION SLASH   &none
-                                         &lt 3 LG(TAB)  &lt 4 TAB       &lt 1 SPACE    &lt 2 SPACE  &kp BACKSPACE    &mt LC(V) LC(C)
+&none  &kp Q            &kp W              &kp E          &kp R            &kp T          &kp Y        &kp U             &kp I            &kp O               &kp P                &none
+&none  &kp A            &hml LEFT_SHIFT S  &hml LCTRL D   &hml LEFT_ALT F  &kp G          &kp H        &hmr RIGHT_ALT J  &hmr RCTRL K     &hmr RIGHT_SHIFT L  &mt COLON SEMICOLON  &none
+&none  &hml LEFT_GUI Z  &kp X              &kp C          &kp V            &kp B          &kp N        &kp M             &kp COMMA        &kp DOT             &mt QUESTION SLASH   &none
+                                           &lt 3 LG(TAB)  &lt 4 TAB        &lt 1 SPACE    &lt 2 SPACE  &kp BACKSPACE     &mt LC(V) LC(C)
             >;
         };
 
@@ -167,10 +209,10 @@
         mouse_layer {
             label = "4";
             bindings = <
-&none  &none  &none  &none  &none  &none    &none                &kp K_BACK      &mkp MCLK       &kp K_FORWARD    &none                  &none
-&none  &none  &none  &none  &none  &none    &kp K_SCROLL_UP      &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &kp K_SCROLL_DOWN      &none
-&none  &none  &none  &none  &none  &none    &kp LS(K_SCROLL_UP)  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp RS(K_SCROLL_DOWN)  &none
-                     &none  &none  &none    &kp C_VOL_DN         &kp C_VOL_UP    &kp K_MUTE
+&none  &none  &none  &none  &none  &none    &none           &kp C_AC_BACK   &mkp MCLK       &kp C_AC_FORWARD  &none            &none
+&none  &none  &none  &none  &none  &none    &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK         &msc SCRL_DOWN   &none
+&none  &none  &none  &none  &none  &none    &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &msc SCRL_RIGHT  &none
+                     &none  &none  &none    &kp C_VOL_DN    &kp C_VOL_UP    &kp K_MUTE
             >;
         };
 
