@@ -179,7 +179,7 @@
         arrow_numbers {
             label = "1";
             bindings = <
-&none  &mt EXCLAMATION KP_NUMBER_1  &mt AT_SIGN KP_NUMBER_2        &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT KP_NUMBER_5    &mt CARET KP_NUMBER_6  &mt AMPERSAND KP_NUMBER_7  &mt ASTERISK KP_NUMBER_8  &mt LEFT_PARENTHESIS KP_NUMBER_9  &mt LEFT_PARENTHESIS KP_NUMBER_0  &none
+&none  &mt EXCLAMATION KP_NUMBER_1  &mt AT_SIGN KP_NUMBER_2        &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT KP_NUMBER_5    &mt CARET KP_NUMBER_6  &mt AMPERSAND KP_NUMBER_7  &mt ASTERISK KP_NUMBER_8  &mt LEFT_PARENTHESIS KP_NUMBER_9  &mt RIGHT_PARENTHESIS KP_NUMBER_0  &none
 &none  &mt UNDERSCORE MINUS         &mt PLUS EQUAL                 &none              &none                &none                      &none                  &kp PAGE_UP                &kp UP_ARROW              &kp PAGE_DOWN                     &mt DOUBLE_QUOTES SQT             &none
 &none  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &none              &none                &none                      &kp HOME               &kp LEFT_ARROW             &kp DOWN                  &kp RIGHT_ARROW                   &kp END                           &none
                                                                    &none              &none                &none                      &none                  &none                      &none
@@ -189,7 +189,7 @@
         arrow_numbers2 {
             label = "2";
             bindings = <
-&none  &mt EXCLAMATION KP_NUMBER_1  &mt AT_SIGN KP_NUMBER_2        &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT KP_NUMBER_5    &mt CARET KP_NUMBER_6  &mt AMPERSAND KP_NUMBER_7  &mt ASTERISK KP_NUMBER_8  &mt LEFT_PARENTHESIS KP_NUMBER_9  &mt LEFT_PARENTHESIS KP_NUMBER_0  &none
+&none  &mt EXCLAMATION KP_NUMBER_1  &mt AT_SIGN KP_NUMBER_2        &mt HASH NUMBER_3  &mt DOLLAR NUMBER_4  &mt PERCENT KP_NUMBER_5    &mt CARET KP_NUMBER_6  &mt AMPERSAND KP_NUMBER_7  &mt ASTERISK KP_NUMBER_8  &mt LEFT_PARENTHESIS KP_NUMBER_9  &mt RIGHT_PARENTHESIS KP_NUMBER_0  &none
 &none  &mt UNDERSCORE MINUS         &mt PLUS EQUAL                 &none              &none                &none                      &none                  &kp PAGE_UP                &kp UP_ARROW              &kp PAGE_DOWN                     &mt DOUBLE_QUOTES SQT             &none
 &none  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &none              &none                &none                      &kp HOME               &kp LEFT_ARROW             &kp DOWN                  &kp RIGHT_ARROW                   &kp END                           &none
                                                                    &none              &none                &none                      &none                  &none                      &none
